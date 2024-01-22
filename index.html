@@ -1,54 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- 
     <title>webpagedesign</title>
     <link rel="stylesheet" href="style.css">
- 
- 
- 
 </head>
-    <body>
-        <div>
-            <h3 class="logo"> Grammy</h3>
-          <div class="menu">
+
+<body>
+    <div>
+        <h1 class="logo">Grammy</h1>
+        <div class="menu">
             <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICE</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="service.html">SERVICE</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
             </ul>
-          </div>
         </div>
- 
-        <br>
-       <div>
- 
-          <br><br><br><br>
- 
- 
-         <div class="container">
-                <h2>Grammar Checker</h2>
-                <p>Type your English text below to check for spelling, grammar.
-                </p>
-                <textarea  id="textarea" class="textarea" placeholder="type here.."  maxlength="250"></textarea>
-                <button onclick="copyText()">Copy text</button>
- 
- 
- 
- 
-                    <div class="counter-remaining">
-                        <p>Remaining : <spam id="remaining-count"></spam>250</p>
- 
-                    </div>
-                </div>
- 
- 
-                <br>
-                <br>
+    </div>
+
+    <br>
+    <div>
+        <br><br><br><br>
+
+        <div class="container">
+            <h2>Grammar Checker</h2>
+            <p>Type your English text below to check for spelling and grammar.</p>
+            <textarea id="textarea" class="textarea" placeholder="type here.." maxlength="250"></textarea>
+            <button onclick="copyText()">Copy text</button>
+
+            <div class="counter-remaining">
+                <p>Remaining: <span id="remaining-count">250</span></p>
             </div>
- 
         </div>
-       <script src="index.js"></script>
-    </body>
+
+        <br>
+        <br>
+    </div>
+ <script>
+        function copyText() {
+            var textarea = document.getElementById("textarea");
+            textarea.select();
+            document.execCommand("copy");
+
+            // Optionally provide user feedback (you can customize this part)
+            alert("Text copied to clipboard!");
+        }
+   
+    </script>
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+    
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+    
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    
+</body>
+
 </html>
